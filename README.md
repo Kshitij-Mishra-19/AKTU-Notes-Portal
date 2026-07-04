@@ -31,24 +31,27 @@ A simple, clean web app to browse and download AKTU college study notes — orga
 
 ## 📂 Project Structure
 
+```
 CollegeNotesProject/
 ├── app.js                     # Main Express server & routes
 ├── data/
 │   └── driveLinks.json        # Year → Subject → Unit → Resource links
 ├── public/
-│   ├── css/style.css
+│   ├── css/
+│   │   └── style.css
 │   ├── images/
 │   └── js/
 ├── views/
 │   ├── index.ejs              # Home page (year selection)
 │   ├── year.ejs                # Subjects list for a year
 │   ├── subject.ejs             # Units & resources for a subject
-│   ├── 404.ejs                 # Not found page
+│   ├── 404.ejs                  # Not found page
 │   └── partials/
 │       ├── navbar.ejs
 │       └── footer.ejs
 ├── package.json
 └── README.md
+```
 
 ---
 
