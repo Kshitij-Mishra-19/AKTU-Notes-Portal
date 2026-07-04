@@ -62,7 +62,7 @@ CollegeNotesProject/
 
 - ### Installation
 
-git clone https://github.com/Kshitij-Mishra-19/CollegeNotesProject.git
+git clone [https://github.com/Kshitij-Mishra-19/CollegeNotesProject.git](https://github.com/Kshitij-Mishra-19/AKTU-Notes-Portal)
 cd CollegeNotesProject
 npm install
 
