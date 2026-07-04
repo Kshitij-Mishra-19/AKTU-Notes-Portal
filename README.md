@@ -80,35 +80,6 @@ Then open http://localhost:3000 in your browser.
 
 ---
 
-## 📝 Adding / Updating Notes
-
-All notes are managed in `data/driveLinks.json`, structured like this:
-
-{
-  "1": [
-    {
-      "id": "maths1",
-      "name": "Mathematics 1",
-      "units": [
-        {
-          "id": "unit1",
-          "name": "Unit 1",
-          "resources": {
-            "Notes": "https://drive.google.com/file/d/FILE_ID/view?usp=drive_link"
-          }
-        }
-      ]
-    }
-  ]
-}
-
-- Top-level keys ("1", "2", "3", "4") represent Years.
-- Each subject needs a unique id and a list of units.
-- Each unit's resources object maps a resource label (e.g. "Notes", "PYQs") to its Google Drive share link.
-- Download links are generated automatically from the share link — no need to add them manually.
-
----
-
 ## 👥 Contributors
 
 - Kshitij Mishra
