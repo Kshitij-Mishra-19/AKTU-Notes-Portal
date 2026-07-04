@@ -3,7 +3,7 @@ const path = require("path");
 const driveLinks = require("./data/driveLinks.json");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Helper function for Google Drive download links
 function getDownloadLink(url) {
