@@ -2,7 +2,7 @@
 
 A simple, clean web app to browse and download AKTU college study notes — organized by **Year → Subject → Unit**. Built with Express and EJS, with all notes hosted on Google Drive.
 
-🔗 **Live Demo:** _add your deployed link here_
+🔗 **Live Demo:** https://aktu-notes-portal-b8pn.onrender.com
 
 ---
 
@@ -26,6 +26,7 @@ A simple, clean web app to browse and download AKTU college study notes — orga
 | Styling      | Bootstrap 5, Bootstrap Icons, custom CSS    |
 | Data Storage | JSON (`data/driveLinks.json`)               |
 | Dev Tooling  | Nodemon                                     |
+| Deployment   | Render                                      |
 
 ---
 
@@ -60,30 +61,63 @@ CollegeNotesProject/
 ### Prerequisites
 - Node.js (v18+ recommended)
 
-- ### Installation
+### Installation
 
-git clone [https://github.com/Kshitij-Mishra-19/CollegeNotesProject.git](https://github.com/Kshitij-Mishra-19/AKTU-Notes-Portal)
-
-cd CollegeNotesProject
-
+```bash
+git clone https://github.com/Kshitij-Mishra-19/AKTU-Notes-Portal.git
+cd AKTU-Notes-Portal
 npm install
+```
 
 ### Run locally
 
+```bash
 # Production mode
 npm start
 
 # Development mode (auto-restart on changes)
 npm run dev
+```
 
 Then open http://localhost:3000 in your browser.
 
 ---
 
+## 📝 Adding / Updating Notes
+
+All notes are managed in `data/driveLinks.json`, structured like this:
+
+```json
+{
+  "1": [
+    {
+      "id": "maths1",
+      "name": "Mathematics 1",
+      "units": [
+        {
+          "id": "unit1",
+          "name": "Unit 1",
+          "resources": {
+            "Notes": "https://drive.google.com/file/d/FILE_ID/view?usp=drive_link"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+- Top-level keys (`"1"`, `"2"`, `"3"`, `"4"`) represent **Years**.
+- Each subject needs a unique `id` and a list of `units`.
+- Each unit's `resources` object maps a **resource label** (e.g. `"Notes"`, `"PYQs"`) to its **Google Drive share link**.
+- Download links are generated automatically from the share link — no need to add them manually.
+
+---
+
 ## 👥 Contributors
 
-- Kshitij Mishra
-- Geetansh Shukla
+- **Kshitij Mishra**
+- **Geetansh Shukla**
 
 ---
 
