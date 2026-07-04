@@ -60,12 +60,6 @@ CollegeNotesProject/
 ### Prerequisites
 - Node.js (v18+ recommended)
 
-### Installation
-
-git clone https://github.com/Kshitij-Mishra-19/CollegeNotesProject.git
-cd CollegeNotesProject
-npm install
-
 ### Run locally
 
 # Production mode
