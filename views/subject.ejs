@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= subject.name %> | College Notes</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="/css/style.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+<%- include("partials/navbar") %>
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <h1 class="subject-title">
+            <i class="bi bi-book-half"></i>
+            <%= subject.name %>
+        </h1>
+
+        <p class="text-muted">
+            Total Units: <strong><%= subject.units.length %></strong>
+        </p>
+
+    </div>
+
+    <% if(subject.units && subject.units.length > 0){ %>
+
+        <% subject.units.forEach(function(unit){ %>
+
+            <div class="card unit-card mb-4 shadow">
+
+                <div class="unit-header">
+
+                    <h4 class="mb-0">
+                        <i class="bi bi-folder2-open"></i>
+                        <%= unit.name %>
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <% if(unit.resources && Object.keys(unit.resources).length > 0){ %>
+
+                        <% Object.keys(unit.resources).forEach(function(resource){ %>
+
+                            <div class="mb-3">
+
+                                <h6>
+                                    <i class="bi bi-file-earmark-text"></i>
+                                    <%= resource %>
+                                </h6>
+
+                                <a
+                                    href="<%= unit.resources[resource] %>"
+                                    target="_blank"
+                                    class="btn btn-success resource-btn">
+
+                                    <i class="bi bi-eye-fill"></i>
+                                    Open
+
+                                </a>
+
+                                
+                                <a
+                                    href="<%= unit.downloadLinks[resource] %>"
+                                    class="btn btn-primary resource-btn">
+
+                                    <i class="bi bi-download"></i>
+                                    Download
+
+                              </a>
+
+                            </div>
+
+                        <% }) %>
+
+                    <% } else { %>
+
+                        <p class="text-muted">
+                            No resources available.
+                        </p>
+
+                    <% } %>
+
+                </div>
+
+            </div>
+
+        <% }) %>
+
+    <% } else { %>
+
+        <div class="alert alert-warning text-center">
+            No Units Available.
+        </div>
+
+    <% } %>
+
+    <div class="text-center mt-4">
+        <a href="/year/<%= year %>" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i>
+            Back to Year
+        </a>
+    </div>
+
+</div>
+
+<%- include("partials/footer") %>
+
+</body>
+</html>

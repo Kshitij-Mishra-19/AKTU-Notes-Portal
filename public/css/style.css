@@ -1,0 +1,57 @@
+/* General */
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f4f7fc;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 3px 10px rgba(0,0,0,.1);
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 18px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+}
+
+/* Icons */
+.subject-icon {
+    font-size: 60px;
+    color: #0d6efd;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    color: #6c757d;
+}
+
+/* Unit Header */
+.unit-header {
+    background: #0d6efd;
+    color: white;
+    padding: 15px;
+    border-radius: 18px 18px 0 0;
+}
